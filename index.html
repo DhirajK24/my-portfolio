@@ -418,6 +418,27 @@ function showSection(sectionId) {
 window.onload = () => {
     showSection("home");
 };
+
+// Function to handle the resume download
+function downloadResume() {
+    // Change 'Resume.pdf' to the exact name of your PDF file in your folder
+    const fileUrl = 'Resume.pdf'; 
+    
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = 'Dhiraj_Kotwal_Resume.pdf'; // The name the file will download as
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Optional: Function for your contact form to prevent page reload
+function submitForm(event) {
+    event.preventDefault(); // Stops the page from refreshing
+    document.getElementById("msg").innerText = "Message sent successfully!";
+    // You can add your form submission logic here later
+}
 </script>
 
 </body>
